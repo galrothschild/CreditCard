@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment homework</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <h1>Let's Make Payment</h1>
+        <p>To start your subscription, input your card details to make payment.
+            You will be redirected to your banks authorization page.</p>
+
+        <form action="" id="creditCardForm">
+            <div class="form-control">
+                <label for="name">Cardholder's Name</label>
+                <input required type="text" name="name" id="name" placeholder="PAULINA CHIMAROKE">
+            </div>
+            <div class="form-control">
+                <label for="cardNumber">Card Number</label>
+                <input required type="text" name="cardNumber" id="cardNumber" placeholder="9870 3456 7890 6473"
+                    maxlength="19">
+            </div>
+            <div class="card-details">
+                <div class="form-control">
+                    <label for="expiry">Expiry</label>
+                    <input required type="text" name="expiry" id="expiry" placeholder="03/25" maxlength="5">
+                </div>
+                <div class="form-control">
+                    <label for="cvc">CVC</label>
+                    <input required type="number" name="cvc" id="cvc" placeholder="654" minlength="3">
+                </div>
+            </div>
+            <div class="form-control">
+                <label for="discount">Discount Code</label>
+                <input type="text" name="discount" id="discount" placeholder="CHIKAMSO-20-OFF">
+                <button type="submit" name="apply-discount" id="apply-discount" class="apply-discount"
+                    disabled>Apply</button>
+            </div>
+            <input type="submit" value="Pay">
+        </form>
+    </main>
+    <div class="summary">
+        <p>You're paying,</p>
+        <h2>
+            <div class="circle"></div>
+            $450.00
+        </h2>
+
+        <ul>
+            <li>
+                <div class="description">Custom Gucci Shoes <span>Size: m Color: Red</span></div>
+                <div class="price">400.00</div>
+            </li>
+            <li>
+                <div class="description">Nivea Cream 400ml<span>Size: m Color: Blue</span></div>
+                <div class="price">400.00</div>
+            </li>
+            <li>
+                <div class="description">Dicounts & Offers</div>
+                <div class="price">0.00</div>
+            </li>
+            <hr>
+            <li>
+                <div class="description">Tax</div>
+                <div class="price">0.00</div>
+            </li>
+            <li>
+                <div class="description">Total</div>
+                <div class="price">0.00</div>
+            </li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
