@@ -104,7 +104,7 @@ function isDateAfterToday(inputDate) {
 
 function validateInputs(e) {
     e.preventDefault();
-    console.log("valdating");
+    ("valdating");
     const form = e.target;
     const fullName = document.getElementById('name');
     const cardNumber = document.getElementById('cardNumber');
@@ -128,7 +128,6 @@ function validateInputs(e) {
         testsFailed++;
     }
     if (cvc.value.length !== 3) {
-        console.log(cvc.value);
         cvc.style.setProperty("--accent-color", "red");
         alert += `Please input a valid cvc.\n`;
         testsFailed++;
@@ -151,9 +150,7 @@ function changeCVC() {
     const clone = cvc.cloneNode(true);
     cvc.parentNode.replaceChild(clone, cvc);
     clone.focus();
-    console.log("banana");
     if (getCardIssuer(cardNumber.value) === "amex") {
-        console.log("test");
         preventKeys('cvc', `^[0-9]$`, 4);
     } else {
         preventKeys('cvc', `^[0-9]$`, 3);
