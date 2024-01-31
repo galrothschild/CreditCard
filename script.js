@@ -161,10 +161,14 @@ cvc.addEventListener("focus", changeCVC);
 
 discount.addEventListener("input", (event) => {
     event.target.value = event.target.value.toUpperCase();
+    const applyDiscount = document.getElementById("apply-discount");
     if (/^[A-Z]{8}-\d{2}-[A-Z]{3}$/.test(event.target.value)) {
         event.target.style.setProperty("--accent-color", "#631aff");
-        document.getElementById("apply-discount").style.color = "#631aff";
+        applyDiscount.style.color = "#631aff";
+        applyDiscount.removeAttribute("disabled");
     } else {
+        applyDiscount.setAttribute("disabled", "");
+        applyDiscount.style.color = "#631aff6a";
         event.target.style.setProperty("--accent-color", "red");
     }
 });
@@ -177,6 +181,17 @@ preventKeys('discount', "[\-A-Za-z0-9]");
 addSpacer('cardNumber', ' ', 4);
 addSpacer('expiry', '/', 2);
 showCardIssuer();
+
+// Apply discount
+
+const applyDiscount = document.getElementById("apply-discount");
+applyDiscount.addEventListener("click", (event) => {
+    console.log(event.target);
+    if (!event.target.getAttribute("disabled")) {
+        discount.style.setProperty("--accent-color", "#11d100b0");
+        discount.setAttribute("readonly", "");
+    }
+});
 
 // form validation
 document.querySelector('#creditCardForm').addEventListener('submit', validateInputs);

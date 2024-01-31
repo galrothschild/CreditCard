@@ -203,6 +203,12 @@ li>.price:before {
     background-color: transparent;
     border: none;
     font-size: 2rem;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.apply-discount[disabled="true"] {
+    cursor: unset;
 }
 
 
